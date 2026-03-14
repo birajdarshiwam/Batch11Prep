@@ -317,23 +317,22 @@ body {
     <div class="card">
       <div class="card-title">Overall Distribution</div>
       <div class="donut-wrap">
-        <svg width="155" height="155" viewBox="0 0 155 155" style="flex-shrink:0">
-          <circle cx="77.5" cy="77.5" r="58" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="19"/>
-          <!-- circumference = 2π×58 ≈ 364.4 -->
-          <!-- Offered 39/59 → 240.6 -->
-          <circle cx="77.5" cy="77.5" r="58" fill="none" stroke="var(--offered)" stroke-width="19"
-            stroke-dasharray="240.6 364.4" stroke-dashoffset="91.1" stroke-linecap="round"
+        <!-- SVG 185×185, r=68, stroke-width=15 → C = 2π×68 ≈ 427.26 -->
+        <!-- Offered 39/59 → 282.4 | Rejected 14/59 → 101.4 | On Hold 6/59 → 43.5 -->
+        <!-- dashoffset: start from 12-o'clock via rotate(-90deg), offset = -(cumulative arc) -->
+        <svg width="185" height="185" viewBox="0 0 185 185" style="flex-shrink:0">
+          <circle cx="92.5" cy="92.5" r="68" fill="none" stroke="rgba(255,255,255,0.05)" stroke-width="15"/>
+          <circle cx="92.5" cy="92.5" r="68" fill="none" stroke="var(--offered)" stroke-width="15"
+            stroke-dasharray="282.4 427.3" stroke-dashoffset="0" stroke-linecap="round"
             style="transform-origin:center;transform:rotate(-90deg)"/>
-          <!-- Rejected 14/59 → 86.5 -->
-          <circle cx="77.5" cy="77.5" r="58" fill="none" stroke="var(--rejected)" stroke-width="19"
-            stroke-dasharray="86.5 364.4" stroke-dashoffset="-149.5" stroke-linecap="round"
+          <circle cx="92.5" cy="92.5" r="68" fill="none" stroke="var(--rejected)" stroke-width="15"
+            stroke-dasharray="101.4 427.3" stroke-dashoffset="-282.4" stroke-linecap="round"
             style="transform-origin:center;transform:rotate(-90deg)"/>
-          <!-- On Hold 6/59 → 37.1 -->
-          <circle cx="77.5" cy="77.5" r="58" fill="none" stroke="var(--onhold)" stroke-width="19"
-            stroke-dasharray="37.1 364.4" stroke-dashoffset="-236.0" stroke-linecap="round"
+          <circle cx="92.5" cy="92.5" r="68" fill="none" stroke="var(--onhold)" stroke-width="15"
+            stroke-dasharray="43.5 427.3" stroke-dashoffset="-383.8" stroke-linecap="round"
             style="transform-origin:center;transform:rotate(-90deg)"/>
-          <text x="77.5" y="71" text-anchor="middle" font-family="Syne" font-size="22" font-weight="800" fill="#E8EDF7">59</text>
-          <text x="77.5" y="88" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#5A6A88">TOTAL</text>
+          <text x="92.5" y="86" text-anchor="middle" font-family="Syne" font-size="24" font-weight="800" fill="#E8EDF7">59</text>
+          <text x="92.5" y="103" text-anchor="middle" font-family="DM Sans" font-size="10" fill="#5A6A88">TOTAL</text>
         </svg>
         <div class="donut-legend">
           <div class="legend-item">
